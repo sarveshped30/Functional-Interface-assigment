@@ -13,6 +13,7 @@ class UserDetails {
     private String lName;
     private String emailId;
     private String number;
+    private String password;
 
     /* Creating getters and setters for user details variables*/
     
@@ -56,10 +57,23 @@ class UserDetails {
         return number;
     }
     public void setNumber(String number) {
+        // Checking mobile number
         if(validate.validateNumber(number)) {
             this.number = number;
         } else {
             System.out.println("Invalid number");
+        }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        // Checking password
+        if(validate.validatePassword(password)) {
+            this.password = password;
+        } else {
+            System.out.println("Invalid password");
         }
     }
 }
@@ -73,10 +87,12 @@ public class Main {
         user.setlName("Pednekar");
         user.setEmailId("sarvesh@gmail.com");
         user.setNumber("91 7977293433");
+        user.setPassword("lunaticAsylum@30");
 
         System.out.println(user.getfName());
         System.out.println(user.getlName());
         System.out.println(user.getEmailId());
         System.out.println(user.getNumber());
+        System.out.println(user.getPassword());
     }
 }
