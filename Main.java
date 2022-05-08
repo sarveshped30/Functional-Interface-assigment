@@ -12,13 +12,13 @@ class UserDetails {
     private String fName;
     private String lName;
     private String emailId;
+    private String number;
 
     /* Creating getters and setters for user details variables*/
     
     public String getfName() {
         return fName;
     }
-
     public void setfName(String fName) {
         // Validating fName
         if(validate.validateFirstName(fName)) {
@@ -31,7 +31,6 @@ class UserDetails {
     public String getlName() {
         return lName;
     }
-
     public void setlName(String lName) {
         // Checking lName
         if(validate.validateLastName(lName)) {
@@ -44,7 +43,6 @@ class UserDetails {
     public String getEmailId() {
         return emailId;
     }
-
     public void setEmailId(String emailId) {
         // Checking emailId
         if(validate.validateEmailId(emailId)) {
@@ -53,7 +51,19 @@ class UserDetails {
             System.out.println("Invalid emailId");
         }
     }
+
+    public String getNumber() {
+        return number;
+    }
+    public void setNumber(String number) {
+        if(validate.validateNumber(number)) {
+            this.number = number;
+        } else {
+            System.out.println("Invalid number");
+        }
+    }
 }
+
 public class Main {
     public static void main(String[] args) {
         // Creating object of user details class
@@ -62,9 +72,11 @@ public class Main {
         user.setfName("Sarvesh");
         user.setlName("Pednekar");
         user.setEmailId("sarvesh@gmail.com");
+        user.setNumber("91 7977293433");
 
         System.out.println(user.getfName());
         System.out.println(user.getlName());
         System.out.println(user.getEmailId());
+        System.out.println(user.getNumber());
     }
 }
