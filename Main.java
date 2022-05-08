@@ -20,60 +20,70 @@ class UserDetails {
     public String getfName() {
         return fName;
     }
-    public void setfName(String fName) {
+    public boolean setfName(String fName) {
         // Validating fName
         if(validate.validateFirstName(fName)) {
             this.fName = fName;
+            return true;
         } else {
             System.out.println("Invalid fName");
+            return false;
         }
     }
 
     public String getlName() {
         return lName;
     }
-    public void setlName(String lName) {
+    public boolean setlName(String lName) {
         // Checking lName
         if(validate.validateLastName(lName)) {
             this.lName = lName;
+            return true;
         } else {
             System.out.println("Invalid lName");
+            return false;
         }
     }
 
     public String getEmailId() {
         return emailId;
     }
-    public void setEmailId(String emailId) {
+    public boolean setEmailId(String emailId) {
         // Checking emailId
         if(validate.validateEmailId(emailId)) {
             this.emailId = emailId;
+            return true;
         } else {
             System.out.println("Invalid emailId");
+            return false;
         }
     }
 
     public String getNumber() {
         return number;
     }
-    public void setNumber(String number) {
+    public boolean setNumber(String number) {
         // Checking mobile number
         if(validate.validateNumber(number)) {
             this.number = number;
+            return true;
         } else {
             System.out.println("Invalid number");
+            return false;
         }
     }
 
     public String getPassword() {
         return password;
     }
-    public void setPassword(String password) {
+    public boolean setPassword(String password) {
         // Checking password
         if(validate.validatePassword(password)) {
             this.password = password;
+            return true;
         } else {
             System.out.println("Invalid password");
+            return false;
         }
     }
 }
