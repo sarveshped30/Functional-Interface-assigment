@@ -2,9 +2,14 @@ package com.bridgelabz.functionalinterface;
 
 import java.util.regex.Pattern;
 
+/* Creating validator class to create and match regex pattern for user details*/
 public class Validator {
+    // Creating private variables for and storing regex pattern
     private final String FIRST_NAME_PATTERN = "^[A-Z][a-z]{2,}$";
-    private static final String LAST_NAME_PATTERN = "^[A-Z][a-z]{2,}$";
+    private final String LAST_NAME_PATTERN = "^[A-Z][a-z]{2,}$";
+    private final String EMAIL_PATTERN = "^[a-z0-9]+([._-][a-z0-9]+)?@[a-z]{2,5}[.][a-z]{2,3}([.][a-z]{2,3})?$";
+
+    /* Creating method for validating user details with regex pattern */
 
     public boolean validateFirstName(String fName) {
         boolean result = Pattern.matches(FIRST_NAME_PATTERN, fName);
@@ -12,7 +17,12 @@ public class Validator {
     }
 
     public boolean validateLastName(String lName) {
-        boolean result = Pattern.matches(FIRST_NAME_PATTERN, lName);
+        boolean result = Pattern.matches(LAST_NAME_PATTERN, lName);
+        return result;
+    }
+
+    public boolean validateEmailId(String email) {
+        boolean result = Pattern.matches(EMAIL_PATTERN, email);
         return result;
     }
 }

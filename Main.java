@@ -11,6 +11,7 @@ class UserDetails {
     /* Creating user details variables and making them private*/
     private String fName;
     private String lName;
+    private String emailId;
 
     /* Creating getters and setters for user details variables*/
     
@@ -39,6 +40,19 @@ class UserDetails {
             System.out.println("Invalid lName");
         }
     }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        // Checking emailId
+        if(validate.validateEmailId(emailId)) {
+            this.emailId = emailId;
+        } else {
+            System.out.println("Invalid emailId");
+        }
+    }
 }
 public class Main {
     public static void main(String[] args) {
@@ -47,8 +61,10 @@ public class Main {
         // Calling methods
         user.setfName("Sarvesh");
         user.setlName("Pednekar");
+        user.setEmailId("sarvesh@gmail.com");
 
         System.out.println(user.getfName());
         System.out.println(user.getlName());
+        System.out.println(user.getEmailId());
     }
 }
