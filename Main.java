@@ -10,8 +10,10 @@ class UserDetails {
 
     /* Creating user details variables and making them private*/
     private String fName;
+    private String lName;
 
     /* Creating getters and setters for user details variables*/
+    
     public String getfName() {
         return fName;
     }
@@ -24,13 +26,29 @@ class UserDetails {
             System.out.println("Invalid fName");
         }
     }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        // Checking lName
+        if(validate.validateLastName(lName)) {
+            this.lName = lName;
+        } else {
+            System.out.println("Invalid lName");
+        }
+    }
 }
 public class Main {
     public static void main(String[] args) {
         // Creating object of user details class
         UserDetails user = new UserDetails();
-        // Calling method
+        // Calling methods
         user.setfName("Sarvesh");
+        user.setlName("Pednekar");
+
         System.out.println(user.getfName());
+        System.out.println(user.getlName());
     }
 }
