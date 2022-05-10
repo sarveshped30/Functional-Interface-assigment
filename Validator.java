@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 /* Creating validator class to create and match regex pattern for user details*/
 public class Validator {
-    // Creating private variables for and storing regex pattern
+    // Creating private variables for and storing regex pattern.
     private final String FIRST_NAME_PATTERN = "^[A-Z][a-z]{2,}$";
     private final String LAST_NAME_PATTERN = "^[A-Z][a-z]{2,}$";
     private final String EMAIL_PATTERN = "^[a-z0-9]+([._+-][a-z0-9]+)?@[a-z0-9]{1,5}[.][a-z]{2,3}([.][a-z]{2,3})?$";
